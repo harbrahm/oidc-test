@@ -1,5 +1,5 @@
 #!/bin/bash
 
-DOCKER_CONTAINER_NAME=keycloak
+DOCKER_CONTAINER_NAME=keycloak1
 
-docker start $DOCKER_CONTAINER_NAME
+sudo docker start $DOCKER_CONTAINER_NAME

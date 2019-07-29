@@ -1,5 +1,5 @@
 #!/bin/sh
 
-DOCKER_CONTAINER_NAME=keycloak
+DOCKER_CONTAINER_NAME=keycloak1
 
-docker rm $DOCKER_CONTAINER_NAME
+sudo docker rm $DOCKER_CONTAINER_NAME

@@ -1,16 +1,16 @@
 #!/bin/bash
 
-DOCKER_CONTAINER_NAME=keycloak
-USERNAME="${USERNAME:-user}"
-PASSWORD="${PASSWORD:-password}"
+DOCKER_CONTAINER_NAME=keycloak1
+USERNAME="${USERNAME:-admin}"
+PASSWORD="${PASSWORD:-admin}"
 CLIENT_SECRET="${CLIENT_SECRET:-d7047915-9029-45b8-9bd6-7ec5c2f75e5b}"
 
 export CLIENT_ID="${1:-myclient}"
-export REDIRECT_URI="${2:-http://example.com}"
+export REDIRECT_URI="${2:-http://54.162.28.222:80}"
 
-docker cp ./bin/keycloak/kcreg_create_client $DOCKER_CONTAINER_NAME:/opt/jboss/create_client
+sudo docker cp ./bin/keycloak/kcreg_create_client $DOCKER_CONTAINER_NAME:/opt/jboss/create_client
 
-docker exec \
+sudo docker exec \
   -e USERNAME="$USERNAME" \
   -e PASSWORD="$PASSWORD" \
   -e CLIENT_ID="$CLIENT_ID" \
