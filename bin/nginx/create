@@ -3,5 +3,8 @@
 DOCKER_CONTAINER_NAME=test-nginx
 
 echo "${NGINX_CONF}"
+sudo docker run -p 5677:80 -dit --name my-app -v "$PWD/webapp":/usr/local/apache2/htdocs/ httpd:2.4
+sudo docker run -p 5678:80 -dit --name my-app2 -v "$PWD/webapp2":/usr/local/apache2/htdocs/ httpd:2.4
+sudo docker run -p 5679:80 -dit --name my-app3 -v "$PWD/webapp3":/usr/local/apache2/htdocs/ httpd:2.4
 
 sudo docker run -d -p80:80 --name $DOCKER_CONTAINER_NAME -v $NGINX_CONF:/etc/nginx/nginx.conf -v $LOAD_CONF:/etc/nginx/conf.d/load-balancer.conf:ro nginx
